@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "findHospitals": "Wa Ile-iwosan",
+    "doctors": "Awọn Dokita",
+    "pharmacies": "Ile-elegbogi",
+    "appointments": "Ipinnu lati pade",
+    "healthTips": "Imọran Ilera",
+    "about": "Nipa wa",
+    "signIn": "Wọle",
+    "getStarted": "Bẹrẹ",
+    "emergency": "Pajawiri"
+  },
+  "home": {
+    "heroTitle": "Wa Ile-iwosan to Tọ, Bayi",
+    "heroSubtitle": "Ṣawari awọn ile-iwosan ti a fọwọsi, ṣeto ipinnu lati pade pẹlu dokita, ati gba awọn iṣẹ pajawiri kọja Naijiria ati Afirika.",
+    "search": "Wa"
+  }
+}

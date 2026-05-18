@@ -1,0 +1,87 @@
+version: '3.9'
+
+services:
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: afiahealth-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: afiahealth
+      MYSQL_USER: afiahealth
+      MYSQL_PASSWORD: afiahealth123
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./docs/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-prootpassword"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - afiahealth-net
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: afiahealth-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - afiahealth-net
+
+  # Spring Boot API
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: afiahealth-api
+    restart: unless-stopped
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: afiahealth
+      DB_USERNAME: afiahealth
+      DB_PASSWORD: afiahealth123
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      JWT_SECRET: "afiahealth-jwt-secret-key-minimum-256-bits-long-for-production-change-me"
+      GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY}
+      FRONTEND_URL: http://localhost:5173
+    ports:
+      - "8080:8080"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    networks:
+      - afiahealth-net
+
+  # Vue.js Frontend (Production build with Nginx)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: afiahealth-frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+    networks:
+      - afiahealth-net
+
+volumes:
+  mysql_data:
+  redis_data:
+
+networks:
+  afiahealth-net:
+    driver: bridge

@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "findHospitals": "Nemo Asibiti",
+    "doctors": "Likitoci",
+    "pharmacies": "Kantin Magani",
+    "appointments": "Alƙawari",
+    "healthTips": "Nasihar Lafiya",
+    "about": "Game da mu",
+    "signIn": "Shiga",
+    "getStarted": "Fara yanzu",
+    "emergency": "Gaggawa"
+  },
+  "home": {
+    "heroTitle": "Nemo Asibiti Daidai, Yanzu Haka",
+    "heroSubtitle": "Gano asibitoci da aka tabbatar, yi alƙawari, da samun sabis na gaggawa a duk faɗin Najeriya da Afirka.",
+    "searchPlaceholder": "Sunan asibiti, ƙwarewar likita...",
+    "allStates": "Dukkan Jihohi",
+    "search": "Nema"
+  }
+}

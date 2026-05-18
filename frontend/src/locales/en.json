@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "findHospitals": "Find Hospitals",
+    "doctors": "Doctors",
+    "pharmacies": "Pharmacies",
+    "appointments": "Appointments",
+    "healthTips": "Health Tips",
+    "about": "About",
+    "signIn": "Sign in",
+    "getStarted": "Get Started",
+    "emergency": "Emergency"
+  },
+  "home": {
+    "heroTitle": "Find the Right Hospital, Right Now",
+    "heroSubtitle": "Discover verified hospitals, book doctor appointments, and access emergency services across Nigeria and Africa.",
+    "searchPlaceholder": "Hospital name, specialty...",
+    "allStates": "All States",
+    "search": "Search",
+    "browseBySpecialty": "Browse by Specialty",
+    "featuredHospitals": "Featured Hospitals",
+    "viewAll": "View all"
+  },
+  "common": {
+    "verified": "Verified",
+    "emergency24": "24/7 Emergency",
+    "telemedicine": "Telemedicine",
+    "ambulance": "Ambulance",
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try again",
+    "book": "Book Appointment",
+    "viewDetails": "View Details",
+    "readMore": "Read More",
+    "km": "km away",
+    "rating": "Rating",
+    "reviews": "reviews"
+  }
+}

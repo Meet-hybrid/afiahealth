@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "findHospitals": "Trouver des Hôpitaux",
+    "doctors": "Médecins",
+    "pharmacies": "Pharmacies",
+    "appointments": "Rendez-vous",
+    "healthTips": "Conseils Santé",
+    "about": "À propos",
+    "signIn": "Connexion",
+    "getStarted": "Commencer",
+    "emergency": "Urgence"
+  },
+  "home": {
+    "heroTitle": "Trouvez le Bon Hôpital, Maintenant",
+    "heroSubtitle": "Découvrez des hôpitaux vérifiés, réservez des rendez-vous et accédez aux services d'urgence en Afrique.",
+    "search": "Rechercher"
+  }
+}
